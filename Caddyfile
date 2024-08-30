@@ -1,21 +1,18 @@
 {
-    http_port 8080
-    https_port 8000
     tailscale {
         ephemeral
     }
 }
 
-localhost {
+caddytest.pinto-gamma.ts.net {
     bind tailscale/caddytest
     tailscale_auth
+    tls {
+        get_certificate tailscale
+    }
     
     root * site/
     file_server
-
-    // basic_auth {
-    //     io $2a$14$LHDws/3savsk0Urp/jkkBeFJTTQRsHybLUmm5vrFXM9bUmqqMMBmK
-    // }
 
 }
 
