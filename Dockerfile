@@ -11,5 +11,3 @@ copy Caddyfile .
 copy --from=builder /usr/bin/caddy .
 
 entrypoint ["./caddy", "run"]
-expose 443
-expose 80
