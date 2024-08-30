@@ -1,18 +1,17 @@
 {
-    tailscale {
-        ephemeral
-    }
+	tailscale {
+		ephemeral
+	}
 }
 
-caddytest.pinto-gamma.ts.net {
-    bind tailscale/caddytest
-    tailscale_auth
-    tls {
-        get_certificate tailscale
-    }
-    
-    root * site/
-    file_server
+https:// {
+	bind tailscale/caddytest
+	tailscale_auth
+	tls {
+		get_certificate tailscale
+	}
 
+	root * site/
+	file_server
 }
 
